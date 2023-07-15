@@ -1,0 +1,13 @@
+# 数据库配置
+dbconfMap={'dbuser':'xxx', 'host':'127.0.0.0', 'port':3306, 'dbname':'xxx'}
+
+# 发件箱
+from_addr =xxxx@xxx.com
+mail_host =xxx.xxx.com
+mail_port =465
+
+# 主题
+subject=退网数据信息_test_zhy
+
+# 收件人，用python列表表示
+list_To=['xxxxxxx@xxx.com.cn']
