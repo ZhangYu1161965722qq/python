@@ -1,0 +1,27 @@
+/*-----------------------------------------------------------------------------
+功能用途：为了查询数据库数据，保存到excel，并发送邮件包含excel附件
+
+文件夹、文件说明（程序路径下，路径和名称不要更改）：
+   \sql_zhangyu文件夹：存放sql文件
+   \sql_zhangyu\Prefix_filename.sql：执行sql后，结果保存的execl文件的前缀
+   \excel_zhangyu文件夹：存查询结果生成的excel文件（也是邮件附件）
+   \history文件夹：存上次操作生成的excel
+   \config.txt:数据库、邮件的配置
+   \k_zhangyu文件：提前加密好的数据库密码、邮件发件密码
+   \msg_mail.txt：自动生成的邮件正文内容
+
+使用说明：
+   一、运行前准备（若配置不变，可不用修改）：
+   1.sql_zhangyu文件夹存放sql文件
+   2.一个sql文件中只存一句sql；多个查询，文件夹中放多个sql文件
+   3.sql文件中，把要替换的条件的值，写成变量（命名规范：@_变量名_ 变量名要一眼能看出意义或直接写中文）
+   5.sql文件用utf-8编码保存，文件名是发送邮件中附件的文件名
+   6.Prefix_filename.sql文件语句写法，例：SELECT CONCAT_WS('-',dlr_code,dlr_short_name) FROM t_usc_mdm_org_dlr WHERE dlr_code = @_经销商编码_
+   7.config.txt中，参数用等号连接，收件人list_To，用python列表表示
+
+   双击 退网信息查询.exe 运行。
+
+   二、运行中：
+   1.自动执行sql_zhangyu文件夹下所有的sql，保存查询结果到excel
+   2.发邮件时，自动把excel_zhangyu文件夹下所有excel文件作为附件发送
+----------------------------------------------------------------------------------------*/
